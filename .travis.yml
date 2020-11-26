@@ -1,0 +1,16 @@
+# In the first line we mention the language we would be working in
+language: python
+# Specifying stable python version that is there in travis-ci
+python:
+  - "3.7"
+
+# Specifying services to be used by travis-ci
+services:
+ - docker
+
+# Now we will mention the scripts to be run before executing any of the automation commands
+before_script: pip install docker-compose
+
+# Now we will mention our main scripts to be run 
+script:
+  - docker-compose run app sh -c "python manage.py test && flake8"

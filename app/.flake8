@@ -1,0 +1,7 @@
+[flake8]
+; Excluding Django created files from flake8 linting or from following PEP-8 rules
+exclude=
+    migrations,
+    __pycache__,
+    manage.py,
+    settings.py
